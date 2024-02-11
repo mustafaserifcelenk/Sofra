@@ -5,40 +5,25 @@ using Sofra.Service.Results;
 
 namespace Sofra.API.Controllers
 {
-    public class ReservationController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class ReservationController(IReservationService reservationService) : ControllerBase
     {
-        private readonly IReservationService _reservationService;
-        public ReservationController(IReservationService reservationService)
-        {
-            _reservationService = reservationService;
-        }
+        private readonly IReservationService _reservationService = reservationService;
 
-        [HttpPost]
-        public async Task<JsonResult> CreateReservation(ReservationCreateDTO reservationCreateDTO)
+        [HttpPost(Name = "CreateReservation")]
+        public async Task<IActionResult> CreateReservation([FromForm] ReservationCreateDTO reservationCreateDTO)
         {
             if (ModelState.IsValid)
             {
                 var result = await _reservationService.CreateReservation(reservationCreateDTO);
                 if (result.ResultStatus == ResultStatus.Success)
                 {
-                    //var ResarvationAddAjaxViewModel = JsonSerializer.Serialize(new ResarvationAddAjaxViewModel
-                    //{
-                    //    ResarvationDto = result.Data,
-                    //    ResarvationAddPartial = await this.RenderViewToStringAsync("_ResarvationAddPartial", reservationCreateDTO)
-                    //}, new JsonSerializerOptions
-                    //{
-                    //    ReferenceHandler = ReferenceHandler.Preserve
-                    //});
-                    //return Json(ResarvationAddAjaxViewModel);
+                    return Ok(result);
                 }
-                ModelState.AddModelError("", result.Message);
+                return BadRequest(result);
             }
-            //var ResarvationAddAjaxErrorModel = JsonSerializer.Serialize(new ResarvationAddAjaxViewModel
-            //{
-            //    reservationCreateDTO = reservationCreateDTO,
-            //    ResarvationAddPartial = await this.RenderViewToStringAsync("_ResarvationAddPartial", reservationCreateDTO)
-            //});
-            return Json("x");
+            return BadRequest(ModelState);
         }
     }
 }

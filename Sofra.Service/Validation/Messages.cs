@@ -14,6 +14,21 @@
             {
                 return $"{tarih:G} tarihli rezervasyon başarıyla eklenmiştir.";
             }
+
+            public static string AddError(DateTime tarih)
+            {
+                return $"{tarih:G} tarihli rezervasyon oluşturulurken hata meydana geldi.";
+            }
+
+            public static List<string> AddValidationError(List<ValidationError> validationErrors)
+            {
+                List<string> messages = [];
+                foreach (var error in validationErrors)
+                {
+                    messages.Add($"{error.PropertyName}: {error.Message}");
+                }
+                return messages;
+            }
         }
     }
 }

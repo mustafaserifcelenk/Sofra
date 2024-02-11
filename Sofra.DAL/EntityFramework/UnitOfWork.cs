@@ -1,11 +1,6 @@
 ﻿using Sofra.DAL.Abstract;
 using Sofra.DAL.EntityFramework.Context;
 using Sofra.DAL.EntityFramework.Repository.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sofra.DAL.EntityFramework
 {

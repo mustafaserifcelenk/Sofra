@@ -1,0 +1,12 @@
+<div>
+  <h2>Rezervasyon Bilgileri:</h2>
+  <label>Tarih:</label>
+  <input type="date" [(ngModel)]="reservationDate">
+  <br>
+  <label>Kişi Sayısı:</label>
+  <input type="number" [(ngModel)]="customerCount">
+</div>
+
+<div>
+  <button (click)="createReservation()">Rezervasyon Oluştur</button>
+</div>

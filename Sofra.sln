@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sofra.API", "Sofra.API\Sofra.API.csproj", "{EEA19B87-0511-475E-A2CA-3F178B1B559C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sofra.API", "Sofra.API\Sofra.API.csproj", "{EEA19B87-0511-475E-A2CA-3F178B1B559C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sofra.Data", "Sofra.Data\Sofra.Data.csproj", "{16B0B275-0F49-49FE-A596-788DDE7F3DAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sofra.Data", "Sofra.Data\Sofra.Data.csproj", "{16B0B275-0F49-49FE-A596-788DDE7F3DAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sofra.DAL", "Sofra.DAL\Sofra.DAL.csproj", "{155AF34B-6F64-4BC4-984B-F1BB628E8D12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sofra.DAL", "Sofra.DAL\Sofra.DAL.csproj", "{155AF34B-6F64-4BC4-984B-F1BB628E8D12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sofra.Service", "Sofra.Service\Sofra.Service.csproj", "{BF6A98C2-28B5-41D0-96E3-F59CC95353C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sofra.Service", "Sofra.Service\Sofra.Service.csproj", "{BF6A98C2-28B5-41D0-96E3-F59CC95353C2}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Sofra.UI", "Sofra.UI\Sofra.UI.esproj", "{CF86448F-ED78-417B-8EA6-4EC3D24AD5EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{BF6A98C2-28B5-41D0-96E3-F59CC95353C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF6A98C2-28B5-41D0-96E3-F59CC95353C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF6A98C2-28B5-41D0-96E3-F59CC95353C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF86448F-ED78-417B-8EA6-4EC3D24AD5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF86448F-ED78-417B-8EA6-4EC3D24AD5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF86448F-ED78-417B-8EA6-4EC3D24AD5EE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF86448F-ED78-417B-8EA6-4EC3D24AD5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF86448F-ED78-417B-8EA6-4EC3D24AD5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF86448F-ED78-417B-8EA6-4EC3D24AD5EE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

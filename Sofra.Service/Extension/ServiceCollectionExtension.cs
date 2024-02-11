@@ -5,6 +5,7 @@ using Sofra.DAL.EntityFramework;
 using Sofra.DAL.EntityFramework.Context;
 using Sofra.Service.Abstract;
 using Sofra.Service.Concrete;
+using Sofra.Service.Validation;
 
 namespace Sofra.Service.Extension
 {
@@ -14,6 +15,7 @@ namespace Sofra.Service.Extension
         {
             serviceCollection.AddDbContext<SofraContext>(options => options.UseSqlServer(connectionString).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
+            serviceCollection.AddScoped<IValidationReservation, ValidationReservation>();
             serviceCollection.AddScoped<IReservationService, ReservationService>();
             //serviceCollection.AddSingleton<IMailService, MailManager>();
             return serviceCollection;
