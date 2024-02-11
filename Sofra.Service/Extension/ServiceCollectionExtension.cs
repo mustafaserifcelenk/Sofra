@@ -17,7 +17,10 @@ namespace Sofra.Service.Extension
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<IValidationReservation, ValidationReservation>();
             serviceCollection.AddScoped<IReservationService, ReservationService>();
-            //serviceCollection.AddSingleton<IMailService, MailManager>();
+            serviceCollection.AddScoped<IMailService, MailService>(sp =>
+            {
+                return new MailService("smtp.example.com", 587, "username", "password", "noreply@example.com");
+            });
             return serviceCollection;
         }
     }

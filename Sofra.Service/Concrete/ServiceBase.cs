@@ -5,11 +5,10 @@ using Sofra.Service.Validation;
 
 namespace Sofra.Service.Concrete
 {
-    public class ServiceBase(IUnitOfWork unitOfWork, IMapper mapper, IValidationReservation validate, IMailService mailService)
+    public class ServiceBase(IUnitOfWork unitOfWork, IMapper mapper, IValidationReservation validate)
     {
         protected IUnitOfWork UnitOfWork { get; } = unitOfWork;
         protected IMapper Mapper { get; } = mapper;
         protected IValidationReservation Validate { get; } = validate;
-        protected IMailService MailService { get; } = mailService;
     }
 }

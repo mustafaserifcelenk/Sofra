@@ -8,7 +8,8 @@ namespace Sofra.Data.Domain
         public int Duration { get; set; }
         public int CustomerCount { get; set; }
         public int CustomerId { get; set; }
+        public int TableId { get; set; }
         public Customer Customer { get; set; }
-        public ICollection<Table> Tables { get; set; }
+        public Table Table { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Sofra.Service.Concrete
 {
-    public class MailService(IUnitOfWork unitOfWork, IMapper mapper, IValidationReservation validate, string smtpHost, int smtpPort, string smtpUsername, string smtpPassword, string sendBy) : ServiceBase(unitOfWork, mapper, validate), IMailService
+    public class MailService(string smtpHost, int smtpPort, string smtpUsername, string smtpPassword, string sendBy) : IMailService
     {
         private readonly string _smtpHost = smtpHost;
         private readonly int _smtpPort = smtpPort;

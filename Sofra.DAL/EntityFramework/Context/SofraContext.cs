@@ -12,6 +12,11 @@ namespace Sofra.DAL.EntityFramework.Context
         public SofraContext(DbContextOptions<SofraContext> options) : base(options)
         {
         }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    Connection stringi burada tanımlarsak herhangi bir değişiklikte programın yeniden build edilmesi gerekir ve bu da dinamik yapılar için doğru bir yaklaşım değildir
+        //    optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSqlLocalDb; Database=ProgrammersBlog; Trusted_Connection=True;Connect Timeout=30;MultipleActiveResultSets=True;");
+        //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CustomerMapping());
