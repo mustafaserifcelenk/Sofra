@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Sofra.Service.Abstract;
-using Sofra.Service.Results;
-using System.Text.Json.Serialization;
-using System.Text.Json;
 using Sofra.Service.DTOs.Reservation;
+using Sofra.Service.Results;
 
 namespace Sofra.API.Controllers
 {

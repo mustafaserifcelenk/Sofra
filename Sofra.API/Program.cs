@@ -1,10 +1,12 @@
+using Sofra.Service.AutoMapper.Profiles;
 using Sofra.Service.Extension;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddAutoMapper(typeof(ReservationProfile));
+var connString = builder.Configuration.GetConnectionString("LocalDB");
 builder.Services.LoadMyServices(connectionString: connString);
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
