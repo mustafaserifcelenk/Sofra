@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
   reservationDate: string = "";
   customerCount: number = 0;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private toastr: ToastrService) {}
 
   ngOnInit() {
     this.reservationForm = new FormGroup({
@@ -30,14 +31,13 @@ export class AppComponent implements OnInit {
     console.log(this.customerCount);
     this.http.post('https://localhost:7234/Reservation', this.reservationForm.value)
       .subscribe(
-        (response) => {
-          console.log('Rezervasyon başarıyla oluşturuldu:', response);
-          // İşlem tamamlandıktan sonra gerekli işlemleri gerçekleştir
-          // Örneğin: Kullanıcıya bir onay mesajı göster
+        (response: any) => {
+          // TODO: Add success functions for response
+          // this.toastr.success(response.message, 'İşlem başarılı!');
         },
-        (error) => {
-          console.error('Rezervasyon oluşturulurken bir hata oluştu:', error);
-          // Hata durumunda kullanıcıya uygun bir mesaj göster
+        (error: any) => {
+          // TODO: Add error functions for response
+          // this.toastr.error(error.message, 'Hata oluştu!');
         }
       );
   }
